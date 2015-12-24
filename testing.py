@@ -1,7 +1,7 @@
 from PIL import Image
 import numpy as np
 
-from myClass import *
+from camera import *
 
 def iprint(v3):
     print(v3.px,v3.py,v3.pz)
@@ -24,8 +24,8 @@ def iprint(v3):
 #
 # print(p1.dot(p2))
 # iprint(p1.s_multip(-5))
-
-#######################################
+#
+# #######################################
 # ca = Camera(100,200)
 #
 # iprint(ca.eye_position)

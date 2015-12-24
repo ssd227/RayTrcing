@@ -1,4 +1,4 @@
-from myClass import *
+from camera import *
 import numpy as np
 from PIL import Image
 
