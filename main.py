@@ -1,12 +1,15 @@
 from camera import *
 import numpy as np
 from PIL import Image
+from geometry import *
 
 # Global variables
 
 HEIGHT = 550
 WIDTH = 800
 
+sence = []
+sence.append(Sphere())
 
 # set camera at P(0,0,0)
 camera = Camera(HEIGHT, WIDTH)
@@ -14,9 +17,21 @@ camera = Camera(HEIGHT, WIDTH)
 # prepare the sences with group of primitives
 
 
+##################################################
+def scence_hit():
 
-# main
+
+
+def ray_color():
+    pass
+
+
+##################################################
+# main fun
 image_array = np.zeros((HEIGHT, WIDTH))
+
+
+
 
 # i for height j for width
 for i in range(HEIGHT):
