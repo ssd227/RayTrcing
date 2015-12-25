@@ -15,30 +15,33 @@ def iprint(v3):
 # print(ray.direction)
 
 
+#########################################
+qiu = Sphere(Vector3(0, 500, 300), 300)
+is_hit, t, rec = qiu.hit(Ray(Vector3(0, 0, 0), Vector3(0, 1, 0)), Light(Vector3(0, 0, 200), 255), 5, 1000000)
 
-# qiu = Sphere(Vector3(0, 500, 300), 300)
-# is_hit, rec = qiu.hit(Ray(Vector3(0, 0, 0), Vector3(0, 1, 0)), Light(Vector3(0, 0, 200), 255), 5, 1000000)
-#
-# print('c')
-# iprint(qiu.center)
-# print('r')
-# print(qiu.radius)
-#
-#
-# print("is hit?:", is_hit)
-#
-# print("ka ks kd p  ")
-# print(rec.Ka)
-# print(rec.Ks)
-# print(rec.Kd)
-# print(rec.p)
-#
-# print('n v l  ')
-# iprint(rec.n)
-# iprint(rec.v)
-# iprint(rec.l)
-#
-# print('Intense of light', rec.I)
+print('c')
+iprint(qiu.center)
+print('r')
+print(qiu.radius)
+
+
+
+
+print("is hit?:", is_hit)
+print("t ", t)
+
+print("ka ks kd p  ")
+print(rec.Ka)
+print(rec.Ks)
+print(rec.Kd)
+print(rec.p)
+
+print('n v l  ')
+iprint(rec.n)
+iprint(rec.v)
+iprint(rec.l)
+
+print('Intense of light', rec.I)
 
 
 #########################################

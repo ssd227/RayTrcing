@@ -27,8 +27,8 @@ camera = Camera(HEIGHT, WIDTH)
 ##################################################
 ###############
 # not test
-def scene_hit(ray, light, t0, t1):
-    global scene
+def scene_hit(ray, t0, t1):
+    global scene, light_a
 
     hit = False
     tt0 = t0
@@ -36,7 +36,10 @@ def scene_hit(ray, light, t0, t1):
     record = None
 
     for surface in scene:
+        #print(surface.hit(ray, light_a, tt0, tt1))
         is_hit, t, rec = surface.hit(ray, light_a, tt0, tt1)
+
+
         if is_hit:
             hit = True
             record = rec
@@ -46,9 +49,8 @@ def scene_hit(ray, light, t0, t1):
 ################
 # not test
 def ray_color(ray, t0, t1):
-    global light_a
 
-    is_hit, t, rec = scene_hit(ray, light_a, t0, t1)
+    is_hit, t, rec = scene_hit(ray, t0, t1)
 
     if is_hit:
         # intersection point
@@ -56,9 +58,9 @@ def ray_color(ray, t0, t1):
         # color
         c = rec.Ka * Ia
 
-        s_is_hit, s_rec, s_t = scene_hit(Ray(p, rec.l),light_a, t0, t1)
+        s_is_hit, s_rec, s_t = scene_hit(Ray(p, rec.l), t0, t1)
         if not s_is_hit:
-            h = rec.l + rec.v
+            h = rec.l.plus(rec.v)
             h.normalize()
 
             c += rec.Kd * rec.I * max(0, rec.n.dot(rec.l))
@@ -83,6 +85,8 @@ for i in range(HEIGHT):
         # do something for each pixel
         i_ray = camera.ray_generator(i, j)
         color = ray_color(i_ray, std_t0, std_t1)
+        if color > 255:
+            color = 255
         image_array[i, j] = color
 
 im = Image.fromarray((np.uint8(image_array)))

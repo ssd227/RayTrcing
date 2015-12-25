@@ -2,12 +2,12 @@ from vector import *
 
 
 class Light:
-    def __init__(self,pos=Vector3(-500,0,500),i = 255):
+    def __init__(self, pos=Vector3(-500, 0, 500), i=255):
         self.position = pos
         self.I = i
 
 class HitRecord:
-    def __init__(self,kakskdp,nvl,i):
+    def __init__(self, kakskdp, nvl, i):
         # for shading coefficients
         self.Ka, self.Ks, self.Kd, self.p = kakskdp
 
@@ -25,7 +25,7 @@ class Surface:
 
 
 class Sphere(Surface):
-    def __init__(self, center=Vector3(0, 800, 0), radius=300, kakskdp=(0.4, 0.5, 0.5, 2)):
+    def __init__(self, center=Vector3(0, 800, 0), radius=100, kakskdp=(0.4, 0.5, 0.5, 2)):
         #  shape of sphere
         self.center = center
         self.radius = radius
@@ -51,7 +51,7 @@ class Sphere(Surface):
                 - dd * (e_minus_c.dot(e_minus_c) - self.radius**2)
 
         if delta < 0:
-            return is_hit, 0
+            return is_hit, 0, 0
         else:
             t_a = (-1 * d_e_c + sqrt(delta)) / dd
             t_b = (-1 * d_e_c - sqrt(delta)) / dd
@@ -61,7 +61,7 @@ class Sphere(Surface):
         elif in_scope(t_a):
             t = t_a
         else:
-            return is_hit, 0
+            return is_hit, 0, 0
 
         p = ray.origin.plus(ray.direction.s_multip(t))
         # print("t", t)
