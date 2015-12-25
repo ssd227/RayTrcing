@@ -25,12 +25,52 @@ class Surface:
 
 class Ground(Surface):
     def __init__(self):
-        self.earth = Vector3(0, 0, 0)
+        self.p0_in_earth = Vector3(0, 0, 0)
         self.n = Vector3(0, 0, 1)
+        self.Ka, self.Ks, self.Kd, self.p = (0.4, 0.5, 0.3, 20)
 
     def hit(self, ray, light, t0, t1):
+        def black_white_ground(p):
+            magic_number = (p.px//200+p.py//200) % 2
+            if magic_number:
+                return 0.8
+            else:
+                return 0.1
 
+        ###########################
         is_hit = False
+
+        # find t
+        nd = self.n.dot(ray.direction)
+        if abs(nd) < 0.001:
+            return is_hit, None, None
+        np0 = self.n.dot(self.p0_in_earth)
+        nori = self.n.dot(ray.origin)
+
+        t = (np0 - nori)/nd
+        if not t0 < t < t1:
+            return is_hit, None, None
+        # end
+
+        p = ray.origin.plus(ray.direction.s_multip(t))
+        self.Kd = black_white_ground(p)
+
+        v = ray.origin.minus(p)
+        v.normalize()
+        n = self.n
+        n.normalize()
+        l = light.position.minus(p)
+        l.normalize()
+
+        is_hit = True
+
+        rec = HitRecord((self.Ka, self.Ks, self.Kd, self.p), (n, v, l), light.I)
+        return is_hit, t, rec
+
+
+
+
+
 
 
 
@@ -54,6 +94,7 @@ class Sphere(Surface):
 
         is_hit = False
 
+        # find t
         e_minus_c = ray.origin.minus(self.center)
         dd = ray.direction.dot(ray.direction)
         d_e_c =ray.direction.dot(e_minus_c)
@@ -62,7 +103,7 @@ class Sphere(Surface):
                 - dd * (e_minus_c.dot(e_minus_c) - self.radius**2)
 
         if delta < 0:
-            return is_hit, 0, 0
+            return is_hit, None, None
         else:
             t_a = (-1 * d_e_c + sqrt(delta)) / dd
             t_b = (-1 * d_e_c - sqrt(delta)) / dd
@@ -72,7 +113,8 @@ class Sphere(Surface):
         elif in_scope(t_a):
             t = t_a
         else:
-            return is_hit, 0, 0
+            return is_hit, None, None
+        # end
 
         p = ray.origin.plus(ray.direction.s_multip(t))
 

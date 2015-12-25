@@ -5,6 +5,9 @@ from geometry import *
 
 # Global variables
 
+# HEIGHT = 300
+# WIDTH = 300
+
 HEIGHT = 800
 WIDTH = 1000
 
@@ -18,13 +21,18 @@ light_a = Light(Vector3(-1000, -100, 1000), 255)
 
 # about scene
 scene = []
-#scene.append(Ground())
+scene.append(Ground())
 scene.append(Sphere(Vector3(-150, 800, 150), 150))
 scene.append(Sphere(Vector3(120, 800, 100), 100))
 
 
 # set camera at P(0,0,0)
-camera = Camera(HEIGHT, WIDTH)
+position = Vector3(-50, -100, 120)
+up = Vector3(0, 0, 1)
+view_re = Vector3(0, -1, 0)
+
+camera = Camera(HEIGHT, WIDTH, position, up, view_re)
+# camera = Camera(HEIGHT, WIDTH)
 
 
 

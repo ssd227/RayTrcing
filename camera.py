@@ -6,13 +6,16 @@ class Ray:
         self.origin = ori
 
 class Camera:
-    def __init__(self, height, width, eye_pos=Vector3(0, -100, 0)):
+    def __init__(self, height, width, eye_pos=Vector3(0, -100, 0),\
+                 V = Vector3(0, 0, 1), W = Vector3(0, -1, 0)):
 
         self.eye_position = eye_pos
 
         # the three basis of the camera
-        self.V = Vector3(0, 0, 1)
-        self.W = Vector3(0, -1, 0)
+        self.V = V
+        V.normalize()
+        self.W = W
+        W.normalize()
         self.U = self.V.X(self.W)
 
         # the fllowing h and w are the size of the origin image

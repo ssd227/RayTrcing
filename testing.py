@@ -9,6 +9,11 @@ from geometry import *
 def iprint(v3):
     print(v3.px, v3.py, v3.pz)
 
+n=0
+if n:
+    print(True)
+else:
+    print(False)
 
 #########################################
 # qiu = Sphere(Vector3(0, 500, 300), 300)
@@ -59,26 +64,26 @@ def iprint(v3):
 # iprint(p1.s_multip(-5))
 #
 # #######################################
-ca = Camera(100, 200)
-
-iprint(ca.eye_position)
-
-print('V')
-iprint(ca.V)
-print('W')
-iprint(ca.W)
-print('U')
-iprint(ca.U)
-
-print(ca.window_H, ca.window_W)
-print(ca.plane_H, ca.plane_W,)
-print(ca.t, ca.b, ca.l, ca.r)
-print(ca.d)
-
-ray = ca.ray_generator(0, 100)
-print("ray.origin")
-iprint(ray.origin)
-iprint(ray.direction)
+# ca = Camera(100, 200)
+#
+# iprint(ca.eye_position)
+#
+# print('V')
+# iprint(ca.V)
+# print('W')
+# iprint(ca.W)
+# print('U')
+# iprint(ca.U)
+#
+# print(ca.window_H, ca.window_W)
+# print(ca.plane_H, ca.plane_W,)
+# print(ca.t, ca.b, ca.l, ca.r)
+# print(ca.d)
+#
+# ray = ca.ray_generator(0, 100)
+# print("ray.origin")
+# iprint(ray.origin)
+# iprint(ray.direction)
 
 
 #######################################
