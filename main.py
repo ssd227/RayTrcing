@@ -5,19 +5,22 @@ from geometry import *
 
 # Global variables
 
-HEIGHT = 550
-WIDTH = 800
+HEIGHT = 300
+WIDTH = 300
 
 std_t0 = 0.1
 std_t1 = 1000000
 
 # about light
 Ia = 100
-light_a = Light()
+light_a = Light(Vector3(-1000, -100, -1000), 255)
+
 
 # about scene
 scene = []
-scene.append(Sphere())
+scene.append(Sphere(Vector3(-150, 800, 150), 150))
+scene.append(Sphere(Vector3(120, 800, 100), 100))
+
 
 # set camera at P(0,0,0)
 camera = Camera(HEIGHT, WIDTH)
@@ -68,10 +71,6 @@ def ray_color(ray, t0, t1):
         return c
     else:
         return 0
-
-
-
-
 
 
 ##################################################

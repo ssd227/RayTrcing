@@ -23,9 +23,14 @@ class Surface:
     def hit(self,ray,light,t0,t1):
         pass
 
+# class Ground(Surface):
+#     def __init__(self):
+#
+#     def hit(self,ray,light,t0,t1):
+
 
 class Sphere(Surface):
-    def __init__(self, center=Vector3(0, 800, 0), radius=100, kakskdp=(0.2, 0.5, 0.3, 4)):
+    def __init__(self, center=Vector3(0, 800, 0), radius=100, kakskdp=(0.4, 0.5, 0.3, 4)):
         #  shape of sphere
         self.center = center
         self.radius = radius
