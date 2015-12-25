@@ -43,7 +43,7 @@ class Sphere(Surface):
 
         is_hit = False
 
-        e_minus_c =ray.origin.minus(self.center)
+        e_minus_c = ray.origin.minus(self.center)
         dd = ray.direction.dot(ray.direction)
         d_e_c =ray.direction.dot(e_minus_c)
 
@@ -64,11 +64,9 @@ class Sphere(Surface):
             return is_hit, 0
 
         p = ray.origin.plus(ray.direction.s_multip(t))
-        print("t", t)
-        print('p')
-        iprint(p)
-
-
+        # print("t", t)
+        # print('p')
+        # iprint(p)
 
         v = ray.origin.minus(p)
         v.normalize()
@@ -80,12 +78,14 @@ class Sphere(Surface):
         is_hit = True
 
         rec = HitRecord((self.Ka, self.Ks, self.Kd, self.p), (n, v, l), light.I)
-        return is_hit, rec
+        return is_hit, t, rec
 
 
 
-def iprint(v3):
-    print(v3.px, v3.py, v3.pz)
+# def iprint(v3):
+#     print(v3.px, v3.py, v3.pz)
+
+
 
 # class Triangle(Surface):
 #     def __init__(self):

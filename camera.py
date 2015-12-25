@@ -47,7 +47,7 @@ class Camera:
 
         # -dW + uU +vV
         dir = _dW.plus(vV).plus(uU)
-        dir = dir.normalize()
+        dir.normalize()
 
         ori = self.eye_position
 
