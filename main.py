@@ -12,7 +12,7 @@ std_t0 = 0.1
 std_t1 = 1000000
 
 # about light
-Ia = 50
+Ia = 100
 light_a = Light()
 
 # about scene
@@ -91,4 +91,5 @@ for i in range(HEIGHT):
 
 im = Image.fromarray((np.uint8(image_array)))
 im.show()
+
 

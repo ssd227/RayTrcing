@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geometry.py" afterPath="$PROJECT_DIR$/geometry.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testing.py" afterPath="$PROJECT_DIR$/testing.py" />
     </list>
     <ignored path="RayTrcing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -41,8 +40,8 @@
       <file leaf-file-name="geometry.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/geometry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.32520324">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.28455284">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,7 +107,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="199" />
+    <option name="x" value="201" />
     <option name="y" value="22" />
     <option name="width" value="986" />
     <option name="height" value="652" />
@@ -386,11 +385,17 @@
       <option name="project" value="LOCAL" />
       <updated>1451038548090</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="version 1.0 gray photo &#10;+I can see something">
+      <created>1451040090054</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1451040090054</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="199" y="22" width="986" height="652" extended-state="0" />
+    <frame x="201" y="22" width="986" height="652" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19792746" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -452,7 +457,8 @@
     <MESSAGE value="球的求交运算实现完成,gemotry.py 大体成型&#10;三角形类还没写,主函数部分稍作修改 (2)" />
     <MESSAGE value="球的求交运算实现完成,gemotry.py +&#10;BUG 已经修改,nvl 已经单位化&#10;" />
     <MESSAGE value="version 1.0 gray photo" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.0 gray photo" />
+    <MESSAGE value="version 1.0 gray photo &#10;+I can see something" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.0 gray photo &#10;+I can see something" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -552,16 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -582,10 +578,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/geometry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.32520324">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.28455284">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
