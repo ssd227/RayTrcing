@@ -3,8 +3,31 @@ import numpy as np
 
 from camera import *
 
+form geo
+
 def iprint(v3):
     print(v3.px,v3.py,v3.pz)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #########################################
 # p1=Vector3(1,1,1)

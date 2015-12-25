@@ -32,9 +32,9 @@ class Sphere(Surface):
         # variables for shading
         self.Ka,self.Ks,self.Kd,self.p = kakskdp
 
-    def hit(self,ray,light,t0,t1):
+    def hit(self, ray, light, t0, t1):
         def in_scope(t):
-            if t < t1 and t > t0:
+            if t0 < t < t1:
                 return True
             else:
                 return False
@@ -70,7 +70,7 @@ class Sphere(Surface):
 
         is_hit = True
 
-        rec = HitRecord((self.Ka,self.Ks,self.Kd,self.p),(v,n,l),light.I)
+        rec = HitRecord((self.Ka, self.Ks, self.Kd, self.p), (v, n, l), light.I)
         return is_hit, rec
 
 
