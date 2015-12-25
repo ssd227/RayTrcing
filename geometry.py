@@ -20,17 +20,24 @@ class HitRecord:
 
 class Surface:
 
-    def hit(self,ray,light,t0,t1):
+    def hit(self, ray, light, t0, t1):
         pass
 
-# class Ground(Surface):
-#     def __init__(self):
-#
-#     def hit(self,ray,light,t0,t1):
+class Ground(Surface):
+    def __init__(self):
+        self.earth = Vector3(0, 0, 0)
+        self.n = Vector3(0, 0, 1)
+
+    def hit(self, ray, light, t0, t1):
+
+        is_hit = False
+
+
+
 
 
 class Sphere(Surface):
-    def __init__(self, center=Vector3(0, 800, 0), radius=100, kakskdp=(0.4, 0.5, 0.3, 4)):
+    def __init__(self, center=Vector3(0, 800, 0), radius=100, kakskdp=(0.4, 0.5, 0.3, 20)):
         #  shape of sphere
         self.center = center
         self.radius = radius
@@ -44,7 +51,6 @@ class Sphere(Surface):
                 return True
             else:
                 return False
-
 
         is_hit = False
 
@@ -69,9 +75,6 @@ class Sphere(Surface):
             return is_hit, 0, 0
 
         p = ray.origin.plus(ray.direction.s_multip(t))
-        # print("t", t)
-        # print('p')
-        # iprint(p)
 
         v = ray.origin.minus(p)
         v.normalize()
@@ -84,11 +87,6 @@ class Sphere(Surface):
 
         rec = HitRecord((self.Ka, self.Ks, self.Kd, self.p), (n, v, l), light.I)
         return is_hit, t, rec
-
-
-
-# def iprint(v3):
-#     print(v3.px, v3.py, v3.pz)
 
 
 

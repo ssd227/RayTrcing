@@ -5,19 +5,20 @@ from geometry import *
 
 # Global variables
 
-HEIGHT = 300
-WIDTH = 300
+HEIGHT = 800
+WIDTH = 1000
 
 std_t0 = 0.1
 std_t1 = 1000000
 
 # about light
 Ia = 100
-light_a = Light(Vector3(-1000, -100, -1000), 255)
+light_a = Light(Vector3(-1000, -100, 1000), 255)
 
 
 # about scene
 scene = []
+#scene.append(Ground())
 scene.append(Sphere(Vector3(-150, 800, 150), 150))
 scene.append(Sphere(Vector3(120, 800, 100), 100))
 
@@ -29,7 +30,6 @@ camera = Camera(HEIGHT, WIDTH)
 
 ##################################################
 ###############
-# not test
 def scene_hit(ray, t0, t1):
     global scene, light_a
 
@@ -50,7 +50,6 @@ def scene_hit(ray, t0, t1):
     return hit, tt1, record
 
 ################
-# not test
 def ray_color(ray, t0, t1):
 
     is_hit, t, rec = scene_hit(ray, t0, t1)

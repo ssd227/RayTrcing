@@ -6,7 +6,7 @@ class Ray:
         self.origin = ori
 
 class Camera:
-    def __init__(self, height, width, eye_pos=Vector3(0, 0, 0)):
+    def __init__(self, height, width, eye_pos=Vector3(0, -100, 0)):
 
         self.eye_position = eye_pos
 
@@ -20,7 +20,7 @@ class Camera:
         self.window_W = width
 
         # keep the scale of the view plane
-        self.plane_H = 1000
+        self.plane_H = 100
         self.plane_W = self.plane_H * width/height
 
         # top down left right of the view plane
@@ -30,7 +30,7 @@ class Camera:
         self.r = self.plane_W / 2
 
         # distance from the eye to the view plane
-        self.d = 1000
+        self.d = 100
 
 
     def ray_generator(self, i, j):
@@ -48,6 +48,7 @@ class Camera:
         # -dW + uU +vV
         dir = _dW.plus(vV).plus(uU)
         dir.normalize()
+        dir.pz *= (-1)
 
         ori = self.eye_position
 

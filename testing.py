@@ -9,39 +9,34 @@ from geometry import *
 def iprint(v3):
     print(v3.px, v3.py, v3.pz)
 
-# ca = Camera(100,100)
-# ray = ca.ray_generator(50, 50)
-#
-# print(ray.direction)
-
 
 #########################################
-qiu = Sphere(Vector3(0, 500, 300), 300)
-is_hit, t, rec = qiu.hit(Ray(Vector3(0, 0, 0), Vector3(0, 1, 0)), Light(Vector3(0, 0, 200), 255), 5, 1000000)
-
-print('c')
-iprint(qiu.center)
-print('r')
-print(qiu.radius)
-
-
-
-
-print("is hit?:", is_hit)
-print("t ", t)
-
-print("ka ks kd p  ")
-print(rec.Ka)
-print(rec.Ks)
-print(rec.Kd)
-print(rec.p)
-
-print('n v l  ')
-iprint(rec.n)
-iprint(rec.v)
-iprint(rec.l)
-
-print('Intense of light', rec.I)
+# qiu = Sphere(Vector3(0, 500, 300), 300)
+# is_hit, t, rec = qiu.hit(Ray(Vector3(0, 0, 0), Vector3(0, 1, 0)), Light(Vector3(0, 0, 200), 255), 5, 1000000)
+#
+# print('c')
+# iprint(qiu.center)
+# print('r')
+# print(qiu.radius)
+#
+#
+#
+#
+# print("is hit?:", is_hit)
+# print("t ", t)
+#
+# print("ka ks kd p  ")
+# print(rec.Ka)
+# print(rec.Ks)
+# print(rec.Kd)
+# print(rec.p)
+#
+# print('n v l  ')
+# iprint(rec.n)
+# iprint(rec.v)
+# iprint(rec.l)
+#
+# print('Intense of light', rec.I)
 
 
 #########################################
@@ -64,26 +59,26 @@ print('Intense of light', rec.I)
 # iprint(p1.s_multip(-5))
 #
 # #######################################
-# ca = Camera(100,200)
-#
-# iprint(ca.eye_position)
-#
-# print('V')
-# iprint(ca.V)
-# print('W')
-# iprint(ca.W)
-# print('U')
-# iprint(ca.U)
-#
-# print(ca.window_H, ca.window_W)
-# print(ca.plane_H, ca.plane_W,)
-# print(ca.t, ca.b, ca.l, ca.r)
-# print(ca.d)
-#
-# ray = ca.ray_generator(50, 100)
-# print("ray.origin")
-# iprint(ray.origin)
-# iprint(ray.direction)
+ca = Camera(100, 200)
+
+iprint(ca.eye_position)
+
+print('V')
+iprint(ca.V)
+print('W')
+iprint(ca.W)
+print('U')
+iprint(ca.U)
+
+print(ca.window_H, ca.window_W)
+print(ca.plane_H, ca.plane_W,)
+print(ca.t, ca.b, ca.l, ca.r)
+print(ca.d)
+
+ray = ca.ray_generator(0, 100)
+print("ray.origin")
+iprint(ray.origin)
+iprint(ray.direction)
 
 
 #######################################
