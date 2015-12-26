@@ -25,8 +25,9 @@ light_a = Light(Vector3(-1000, -100, 1000), 255)
 # about scene
 scene = []
 scene.append(Ground())
-scene.append(Sphere(Vector3(-150, 800, 150), 150))
-scene.append(Sphere(Vector3(120, 800, 100), 100))
+scene.append(Sphere(Vector3(-150, 800, 150), 150, (0.4, 0.5, 0.5, 20)))
+scene.append(Sphere(Vector3(120, 800, 100), 100, (0.4, 0.3, 0.1, 1)))
+
 
 
 # set camera at P(0,0,0)
@@ -114,6 +115,6 @@ for i in range(HEIGHT):
 
 im = Image.fromarray((np.uint8(image_array)))
 im.show()
-im.save("./pic/R.JPG", "JPEG")
+im.save("./pic/3.JPG", "JPEG")
 
 

@@ -68,14 +68,6 @@ class Ground(Surface):
         return is_hit, t, rec
 
 
-
-
-
-
-
-
-
-
 class Sphere(Surface):
     def __init__(self, center=Vector3(0, 800, 0), radius=100, kakskdp=(0.4, 0.5, 0.3, 20)):
         #  shape of sphere
