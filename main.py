@@ -11,8 +11,8 @@ from geometry import *
 HEIGHT = 300
 WIDTH = 300
 
-# HEIGHT = 800
-# WIDTH = 1000
+#HEIGHT = 800
+#WIDTH = 1000
 
 std_t0 = 0.1
 std_t1 = 1000000
@@ -27,7 +27,7 @@ scene = []
 scene.append(Ground())
 scene.append(Sphere(Vector3(-150, 800, 150), 150, (0.4, 0.5, 0.5, 20)))
 scene.append(Sphere(Vector3(120, 800, 100), 100, (0.4, 0.3, 0.1, 1)))
-
+#scene.append(Sphere(Vector3(0, 6000, 500), 3000))
 
 
 # set camera at P(0,0,0)
@@ -115,6 +115,6 @@ for i in range(HEIGHT):
 
 im = Image.fromarray((np.uint8(image_array)))
 im.show()
-im.save("./pic/3.JPG", "JPEG")
+im.save("./pic/test.JPG", "JPEG")
 
 
