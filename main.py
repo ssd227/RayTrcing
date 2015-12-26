@@ -11,6 +11,9 @@ from geometry import *
 HEIGHT = 300
 WIDTH = 300
 
+# HEIGHT = 800
+# WIDTH = 1000
+
 std_t0 = 0.1
 std_t1 = 1000000
 
@@ -59,7 +62,10 @@ def scene_hit(ray, t0, t1):
     return hit, tt1, record
 
 ################
-def ray_color(ray, t0, t1):
+def ray_color(ray, t0, t1, depth):
+    # max recursive depth
+    if depth > 5:
+        return 0
 
     is_hit, t, rec = scene_hit(ray, t0, t1)
 
@@ -69,13 +75,25 @@ def ray_color(ray, t0, t1):
         # color
         c = rec.Ka * Ia
 
-        s_is_hit, s_rec, s_t = scene_hit(Ray(p, rec.l), t0, t1)
+        s_is_hit, s_t, s_rec = scene_hit(Ray(p, rec.l), t0, t1)
+
+        # Ideal Specular Reflection
+        Km = 0.15
+        two_nv = 2 * rec.n.dot(rec.v)
+        two_nvN = rec.n.s_multip(two_nv)
+        r = two_nvN.minus(rec.v)
+        c += Km * ray_color(Ray(p, r), t0, t1, depth+1)
+
+        # refaction
+
+
         if not s_is_hit:
             h = rec.l.plus(rec.v)
             h.normalize()
 
             c += rec.Kd * rec.I * max(0, rec.n.dot(rec.l))
             c += rec.Ks * rec.I * (rec.n.dot(h)**rec.p)
+
         return c
     else:
         return 0
@@ -91,7 +109,7 @@ for i in range(HEIGHT):
     for j in range(WIDTH):
         # do something for each pixel
         i_ray = camera.ray_generator(i, j)
-        color = ray_color(i_ray, std_t0, std_t1)
+        color = ray_color(i_ray, std_t0, std_t1, 1)
         if color > 255:
             color = 255
         image_array[i, j] = color
