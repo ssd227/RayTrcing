@@ -9,11 +9,29 @@ from geometry import *
 def iprint(v3):
     print(v3.px, v3.py, v3.pz)
 
-n=0
-if n:
-    print(True)
-else:
-    print(False)
+
+
+x = Vector3(1, 0, 0)
+y = Vector3(0, 1, 0)
+z = Vector3(0, 0, 1)
+
+y.vertical_rotation(90)
+z.vertical_rotation(90)
+
+x.horizontal_rotation(90)
+y.horizontal_rotation(90)
+
+iprint(x)
+iprint(y)
+iprint(z)
+
+
+########################################
+# n=0
+# if n:
+#     print(True)
+# else:
+#     print(False)
 
 #########################################
 # qiu = Sphere(Vector3(0, 500, 300), 300)

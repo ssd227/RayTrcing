@@ -8,8 +8,8 @@ from geometry import *
 # HEIGHT = 300
 # WIDTH = 300
 
-HEIGHT = 800
-WIDTH = 1000
+HEIGHT = 300
+WIDTH = 300
 
 std_t0 = 0.1
 std_t1 = 1000000
@@ -31,7 +31,8 @@ position = Vector3(-50, -100, 120)
 up = Vector3(0, 0, 1)
 view_re = Vector3(0, -1, 0)
 
-camera = Camera(HEIGHT, WIDTH, position, up, view_re)
+#camera = Camera(HEIGHT, WIDTH, position, up, view_re)
+camera = CameraV2(HEIGHT, WIDTH, position, 0)
 # camera = Camera(HEIGHT, WIDTH)
 
 

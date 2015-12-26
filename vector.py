@@ -1,5 +1,5 @@
 from functools import reduce
-from math import sqrt
+from math import sqrt, sin, cos
 
 class Vector3:
     def __init__(self, x, y, z):
@@ -49,3 +49,14 @@ class Vector3:
         self.px /= mo
         self.py /= mo
         self.pz /= mo
+
+    def horizontal_rotation(self, theta):
+        pi = 3.1415926
+        theta_r = theta * pi / 180
+        new_x = cos(theta_r) * self.px - sin(theta_r) * self.py
+        new_y = sin(theta_r) * self.px + cos(theta_r) * self.py
+
+        self.px = new_x
+        self.py = new_y
+
+
