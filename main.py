@@ -78,19 +78,17 @@ def ray_color(ray, t0, t1, depth):
         s_is_hit, s_t, s_rec = scene_hit(Ray(p, rec.l), t0, t1)
 
         # Ideal Specular Reflection
-        Km = 0.15
+        K_isr = 0.2
         two_nv = 2 * rec.n.dot(rec.v)
         two_nvN = rec.n.s_multip(two_nv)
         r = two_nvN.minus(rec.v)
-        c += Km * ray_color(Ray(p, r), t0, t1, depth+1)
 
-        # refaction
+        c += K_isr * ray_color(Ray(p, r), t0, t1, depth+1)
 
 
         if not s_is_hit:
             h = rec.l.plus(rec.v)
             h.normalize()
-
             c += rec.Kd * rec.I * max(0, rec.n.dot(rec.l))
             c += rec.Ks * rec.I * (rec.n.dot(h)**rec.p)
 
@@ -116,5 +114,6 @@ for i in range(HEIGHT):
 
 im = Image.fromarray((np.uint8(image_array)))
 im.show()
+im.save("./pic/R.JPG", "JPEG")
 
 
